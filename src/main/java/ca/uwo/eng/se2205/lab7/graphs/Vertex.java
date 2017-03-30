@@ -54,7 +54,6 @@ public interface Vertex<V, E> {
 
     /**
      * Gets all of the edges of a {@link Vertex}
-     * @param v
      * @return Non-{@code null} collection of {@link Edge}s, but possibly empty
      *
      * @throws ClassCastException if the {@link Vertex} implementation is not correct

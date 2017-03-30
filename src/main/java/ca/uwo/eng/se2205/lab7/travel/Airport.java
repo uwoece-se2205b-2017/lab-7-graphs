@@ -18,7 +18,7 @@ public final class Airport {
 
     public Airport(String code, double latitude, double longitude) {
         checkArgument(code != null && code.length() == 3,
-                      "Code can not be null or under 3 chars");
+                      "Code must be 3 chars");
 
         this.code = code;
         this.latitude = latitude;

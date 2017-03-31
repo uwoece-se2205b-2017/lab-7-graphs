@@ -26,7 +26,8 @@ public final class FlightShopper {
      * Finds the cheapest flight from two {@link Airport}s.
      * @param from Starting airport
      * @param to Ending airport
-     * @return Cheapest {@code Itinerary} to fly between {@code from} and {@code to}
+     * @return Cheapest {@code Itinerary} to fly between {@code from} and {@code to},
+     *          {@code null} if there is no valid Itinerary
      */
     public Itinerary price(Airport from, Airport to) {
         return null;

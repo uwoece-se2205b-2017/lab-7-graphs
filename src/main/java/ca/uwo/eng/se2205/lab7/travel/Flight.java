@@ -1,7 +1,6 @@
 package ca.uwo.eng.se2205.lab7.travel;
 
 import com.google.common.base.MoreObjects;
-import com.google.common.base.Strings;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 import javax.annotation.concurrent.Immutable;
@@ -16,29 +15,18 @@ import static com.google.common.base.Preconditions.checkNotNull;
 @Immutable
 public final class Flight {
 
-    private final String code;
     private final double cost;
 
     private final Airport departure;
     private final Airport arrival;
 
-    public Flight(String code, Airport departure, Airport arrival, double cost) {
-        checkArgument(!Strings.isNullOrEmpty(code), "code == null || \"\"");
+    public Flight(Airport departure, Airport arrival, double cost) {
         checkArgument(cost >= 0.0, "cost must not be negative");
 
-        this.code = code;
         this.cost = cost;
 
         this.departure = checkNotNull(departure, "departure == null");
         this.arrival = checkNotNull(arrival, "arrival == null");
-    }
-
-    /**
-     * Unique flight code for the flight
-     * @return Non-{@code null} flight code
-     */
-    public String getCode() {
-        return code;
     }
 
     /**
@@ -68,7 +56,6 @@ public final class Flight {
     @Override
     public String toString() {
         return MoreObjects.toStringHelper(this)
-                .addValue("code")
                 .add("cost", cost)
                 .add("departure", departure)
                 .add("arrival", arrival)
